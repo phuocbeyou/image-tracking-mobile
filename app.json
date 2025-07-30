@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "image-tracking",
+    "name": "Hiện Vật Việt Nam AR",
     "slug": "image-tracking",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,14 +9,33 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses camera for AR tracking and 3D model display",
+        "NSMicrophoneUsageDescription": "This app may use microphone for AR features"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "CAMERA",
+        "RECORD_AUDIO",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.phamhuuphuoc.imagetracking"
     },
     "web": {
       "bundler": "metro",
@@ -33,10 +52,31 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera for AR features."
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "updates": {
+      "enabled": true,
+      "fallbackToCacheTimeout": 0,
+      "checkAutomatically": "ON_LOAD",
+      "url": "https://u.expo.dev/5164baf6-48fe-4c2d-966e-b530b3b7f9d3"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "5164baf6-48fe-4c2d-966e-b530b3b7f9d3"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
